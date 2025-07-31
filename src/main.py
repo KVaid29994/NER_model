@@ -1,5 +1,5 @@
-from data_loader import load_data
-from pipeline import train_pipeline
+from src.data_loader import load_data
+from src.pipeline import train_pipeline
 from pathlib import Path
 
 if __name__ == "__main__":

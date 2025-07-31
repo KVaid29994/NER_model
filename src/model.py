@@ -1,7 +1,7 @@
 import joblib
 import os
 from pathlib import Path
-from logger_config import get_logger
+from src.logger_config import get_logger
 
 logger = get_logger(__name__)
 

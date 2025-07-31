@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NER Tagger</title>
-  <style>
-    body { font-family: Arial; padding: 20px; }
-    textarea { width: 100%; height: 80px; }
-    .tagged { margin-top: 20px; }
-    .tagged span { padding: 4px 6px; margin: 2px; border-radius: 4px; background: #1bcfe7; display: inline-block; }
-  </style>
+    <title>NER Tagger</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2rem; background-color: #f7f7f7; }
+        .container { max-width: 700px; margin: auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input[type="text"] { width: 100%; padding: 0.5rem; margin-bottom: 1rem; font-size: 1rem; }
+        button { padding: 0.5rem 1rem; font-size: 1rem; background-color: #007BFF; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
+    </style>
 </head>
 <body>
-  <h2>Named Entity Recognition</h2>
-  <textarea id="inputSentence" placeholder="Enter your sentence..."></textarea><br>
-  <button onclick="getTags()">Tag Entities</button>
+    <div class="container">
+        <h1>Named Entity Recognition (NER)</h1>
+        <form method="post">
+            <label for="sentence">Enter a sentence:</label>
+            <input type="text" name="sentence" placeholder="Type a sentence like 'Steve works at Google'" required>
+            <button type="submit">Predict</button>
+        </form>
 
-  <div class="tagged" id="outputTags"></div>
-
-  <script>
-    async function getTags() {
-      const sentence = document.getElementById("inputSentence").value;
-      const response = await fetch("http://localhost:8000/predict", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sentence }),
-      });
-      const data = await response.json();
-      const out = data.words.map((word, i) => `<span>${word} <b>[${data.tags[i]}]</b></span>`).join(" ");
-      document.getElementById("outputTags").innerHTML = out;
-    }
-  </script>
+        {% if result %}
+        <h2>Predicted Tags:</h2>
+        <table>
+            <tr>
+                <th>Word</th>
+                <th>Tag</th>
+            </tr>
+            {% for word, tag in result %}
+            <tr>
+                <td>{{ word }}</td>
+                <td>{{ tag }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
 </body>
 </html>

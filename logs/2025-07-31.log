@@ -1,0 +1,11 @@
+2025-07-31 14:50:17 - src.model - INFO - Loading CRF model from C:\Users\kanha\Desktop\Sap_assignment\models\crf_model.pkl
+2025-07-31 14:50:19 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-07-31 14:50:33 - src.model - INFO - Loading CRF model from C:\Users\kanha\Desktop\Sap_assignment\models\crf_model.pkl
+2025-07-31 14:53:20 - src.model - INFO - Loading CRF model from C:\Users\kanha\Desktop\Sap_assignment\models\crf_model.pkl
+2025-07-31 14:55:00 - src.model - INFO - Loading CRF model from C:\Users\kanha\Desktop\Sap_assignment\models\crf_model.pkl
+2025-07-31 14:55:19 - src.feature_extraction - INFO - Preparing features from single input sentence
+2025-07-31 14:55:34 - src.feature_extraction - INFO - Preparing features from single input sentence
