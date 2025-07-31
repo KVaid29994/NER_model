@@ -1,0 +1,106 @@
+2025-07-31 08:58:09 - data_loader - INFO - Loading data from data/ner_dataset.csv
+2025-07-31 08:59:56 - data_loader - INFO - Loading data from C:\Users\kanha\Desktop\Sap_assignment\data\ner_dataset.csv
+2025-07-31 09:00:33 - data_loader - INFO - Data loaded successfully
+2025-07-31 09:00:54 - data_loader - INFO - Loading data from C:\Users\kanha\Desktop\Sap_assignment\data\ner_dataset.csv
+2025-07-31 09:01:23 - data_loader - INFO - Data loaded successfully
+2025-07-31 09:01:23 - pipeline - INFO - Starting training pipeline
+2025-07-31 09:01:23 - data_loader - INFO - Loading data from C:\Users\kanha\Desktop\Sap_assignment\data\ner_dataset.csv
+2025-07-31 09:01:52 - data_loader - INFO - Data loaded successfully
+2025-07-31 09:01:52 - pipeline - INFO - Loaded data successfully
+2025-07-31 09:01:52 - feature_extraction - INFO - Preparing features and labels from sentences
+2025-07-31 09:01:55 - pipeline - INFO - Prepared 47960 sequences for training
+2025-07-31 09:05:38 - pipeline - INFO - Training completed
+2025-07-31 09:08:41 - data_loader - INFO - Loading data from C:\Users\kanha\Desktop\Sap_assignment\data\ner_dataset.csv
+2025-07-31 09:09:11 - data_loader - INFO - Data loaded successfully
+2025-07-31 09:09:11 - pipeline - INFO - Starting training pipeline
+2025-07-31 09:09:11 - data_loader - INFO - Loading data from C:\Users\kanha\Desktop\Sap_assignment\data\ner_dataset.csv
+2025-07-31 09:09:38 - data_loader - INFO - Data loaded successfully
+2025-07-31 09:09:38 - pipeline - INFO - Loaded data successfully
+2025-07-31 09:09:38 - feature_extraction - INFO - Preparing features and labels from sentences
+2025-07-31 09:09:40 - pipeline - INFO - Prepared 47960 sequences for training
+2025-07-31 09:13:23 - pipeline - INFO - Training completed
+2025-07-31 09:37:13 - data_loader - INFO - Loading data from C:\Users\kanha\Desktop\Sap_assignment\data\ner_dataset.csv
+2025-07-31 09:37:44 - data_loader - INFO - Data loaded successfully
+2025-07-31 09:37:44 - pipeline - INFO - Starting training pipeline
+2025-07-31 09:37:44 - data_loader - INFO - Loading data from C:\Users\kanha\Desktop\Sap_assignment\data\ner_dataset.csv
+2025-07-31 09:38:12 - data_loader - INFO - Data loaded successfully
+2025-07-31 09:38:12 - feature_extraction - INFO - Preparing features and labels from sentences
+2025-07-31 09:38:17 - pipeline - INFO - Total sequences: 47960
+2025-07-31 09:38:17 - pipeline - INFO - Train size: 28776 | Val size: 9592 | Test size: 9592
+2025-07-31 09:38:20 - pipeline - INFO - Model training completed
+2025-07-31 09:38:20 - model - INFO - CRF model saved at C:\Users\kanha\Desktop\Sap_assignment\models\crf_model.pkl
+2025-07-31 09:38:20 - pipeline - INFO - Model saved successfully
+2025-07-31 09:38:20 - pipeline - INFO - Evaluating on validation set
+2025-07-31 09:38:20 - pipeline - INFO - Evaluating CRF model on val set
+2025-07-31 09:38:20 - pipeline - INFO - 
+VAL Classification Report:
+              precision    recall  f1-score   support
+
+       B-geo     0.7546    0.8634    0.8054       659
+           O     0.9674    0.9882    0.9777      6850
+       B-per     0.8718    0.8348    0.8529       823
+       B-org     0.7347    0.5540    0.6317       565
+       B-gpe     0.9560    0.8985    0.9264       581
+       B-tim     0.9868    0.7143    0.8287       105
+       B-nat     1.0000    0.6667    0.8000         3
+       B-art     0.6667    0.6667    0.6667         3
+       B-eve     0.0000    0.0000    0.0000         3
+
+    accuracy                         0.9319      9592
+   macro avg     0.7709    0.6874    0.7210      9592
+weighted avg     0.9300    0.9319    0.9296      9592
+
+2025-07-31 09:38:20 - pipeline - INFO - VAL F1 per label: {'B-geo': np.float64(0.805378627034678), 'O': np.float64(0.9776846970462916), 'B-per': np.float64(0.8528864059590316), 'B-org': np.float64(0.6316851664984864), 'B-gpe': np.float64(0.9263531499556344), 'B-tim': np.float64(0.8287292817679558), 'B-nat': np.float64(0.8), 'B-art': np.float64(0.6666666666666666), 'B-eve': np.float64(0.0)}
+2025-07-31 09:38:22 - pipeline - INFO - VAL F1 score plot saved at C:\Users\kanha\Desktop\Sap_assignment\logs\f1_scores_val.png
+2025-07-31 09:38:22 - pipeline - INFO - VAL Confusion matrix plot saved at C:\Users\kanha\Desktop\Sap_assignment\logs\conf_matrix_val.png
+2025-07-31 09:38:23 - pipeline - INFO - VAL Top Misclassified Tokens:
+Word    True Label  Predicted Label
+The     B-org       O                  33
+U.S.    B-org       B-geo              31
+China   B-org       B-geo              10
+Turkey  B-geo       B-org               8
+Human   O           B-org               8
+Egypt   B-org       B-geo               7
+South   O           B-geo               7
+Israel  B-org       B-geo               6
+New     B-geo       O                   6
+Later   B-tim       O                   6
+Name: count, dtype: int64
+2025-07-31 09:38:23 - pipeline - INFO - VAL Error log saved at C:\Users\kanha\Desktop\Sap_assignment\logs\crf_errors_val.csv
+2025-07-31 09:38:23 - pipeline - INFO - Evaluating on test set
+2025-07-31 09:38:23 - pipeline - INFO - Evaluating CRF model on test set
+2025-07-31 09:38:41 - pipeline - INFO - 
+TEST Classification Report:
+              precision    recall  f1-score   support
+
+       B-geo     0.1480    0.6772    0.2429     34971
+           O     0.9558    0.5751    0.7181    860480
+       B-per     0.1020    0.7344    0.1791     13762
+       B-org     0.1195    0.4350    0.1875     17923
+       B-gpe     0.1666    0.9483    0.2835     13495
+       B-tim     0.2254    0.7425    0.3458     19922
+       B-nat     0.0429    0.3212    0.0757       193
+       B-art     0.0011    0.0646    0.0021       387
+       B-eve     0.0211    0.0369    0.0268       298
+
+   micro avg     0.5584    0.5868    0.5723    961431
+   macro avg     0.1980    0.5039    0.2291    961431
+weighted avg     0.8715    0.5868    0.6688    961431
+
+2025-07-31 09:38:45 - pipeline - INFO - TEST F1 per label: {'B-geo': np.float64(0.24288607984410657), 'O': np.float64(0.7181102385056971), 'B-per': np.float64(0.1790656060096026), 'B-org': np.float64(0.18748496945793852), 'B-gpe': np.float64(0.283473811290662), 'B-tim': np.float64(0.3458094681472823), 'B-nat': np.float64(0.07574832009773977), 'B-art': np.float64(0.0020797803751923796), 'B-eve': np.float64(0.026829268292682926)}
+2025-07-31 09:38:46 - pipeline - INFO - TEST F1 score plot saved at C:\Users\kanha\Desktop\Sap_assignment\logs\f1_scores_test.png
+2025-07-31 09:38:46 - pipeline - INFO - TEST Confusion matrix plot saved at C:\Users\kanha\Desktop\Sap_assignment\logs\conf_matrix_test.png
+2025-07-31 09:38:47 - pipeline - INFO - TEST Top Misclassified Tokens:
+Word  True Label  Predicted Label
+.     O           B-per              47761
+,     O           B-geo              32476
+in    O           B-gpe              26199
+to    O           B-geo              23095
+a     O           B-geo              20479
+and   O           B-geo              19228
+has   O           B-org               7216
+is    O           B-art               6746
+on    O           B-org               6706
+said  O           B-per               5321
+Name: count, dtype: int64
+2025-07-31 09:38:48 - pipeline - INFO - TEST Error log saved at C:\Users\kanha\Desktop\Sap_assignment\logs\crf_errors_test.csv
